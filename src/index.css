@@ -1,0 +1,10 @@
+.root {
+    
+    color: rgba(255, 255, 255, 0.93);
+    background-color: #1c1e29; 
+}
+
+.body header {
+    width: 50%;
+}
+
