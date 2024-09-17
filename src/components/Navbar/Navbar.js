@@ -25,7 +25,6 @@ const Navbar = () => {
                     <List sx={{ display: 'flex', alignItems: 'center' }}>
                         {mainNavbarItems.map((item) => (
                             <ListItem
-                                button
                                 key={item.id}
                                 component={NavLink}
                                 to={item.route}

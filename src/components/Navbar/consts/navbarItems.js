@@ -20,7 +20,7 @@ export const mainNavbarItems = [
         id: 1,
         icon: <PersonIcon />,
         label: 'About me ',
-        route: 'authentication',
+        route: 'aboutme',
     },
     {
         id: 2,
