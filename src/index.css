@@ -1,7 +1,7 @@
-.root {
-    color: rgba(255, 255, 255, 0.93);
-    background-color: #1c1e29; 
-}
+/*.root {
+     color: rgba(255, 255, 255, 0.93); 
+    background-color: #1c1e29;
+}*/
 
 .root header div{
     padding-left: 8px;
@@ -13,8 +13,8 @@
     padding: 4px;  
 }
 
-.MuiBox-root .MuiListItemIcon-root {
-    color: rgba(255, 255, 255, 0.7)
-}
+/*.MuiBox-root .MuiListItemIcon-root {
+     color: rgba(255, 255, 255, 0.7) 
+}*/
 
 

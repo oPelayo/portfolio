@@ -11,14 +11,16 @@ import { NavLink } from 'react-router-dom';
 import { mainNavbarItems } from './consts/navbarItems';
 import { navbarStyles } from './styles';
 import '../../index.css';
+import Brightness4Icon from '@mui/icons-material/Brightness4';
+import Brightness7Icon from '@mui/icons-material/Brightness7';
 
-const Navbar = () => {
+const Navbar = ({ toggleTheme, isDarkMode }) => {
     const [activeLink, setActiveLink] = useState("");
 
     const handleActiveLink = (route) => setActiveLink(route);
 
     return (
-        <AppBar position="static" sx={{ backgroundColor: '#1c1e29', color: '#fff' }}>
+        <AppBar position="static">
             <Toolbar sx={{ display: 'flex', justifyContent: 'space-between' }}>
                 {/* Menú de Navegación */}
                 <Box sx={{ display: 'flex', gap: 2 }}>
@@ -39,21 +41,19 @@ const Navbar = () => {
                                     },
                                 }}
                             >
-                              <ListItemIcon
-                                sx={navbarStyles.icons}
-                              >
-                                {item.icon}
-                              </ListItemIcon>
-                              <ListItemText primary={item.label} />
+                                <ListItemIcon
+                                    sx={navbarStyles.icons}
+                                >
+                                    {item.icon}
+                                </ListItemIcon>
+                                <ListItemText primary={item.label} />
                             </ListItem>
                         ))}
                     </List>
                 </Box>
-
-                {/* Iconos de Contacto */}
                 <Box>
-                    <IconButton sx={{ color: '#00bcd4' }}> {/* Icono LinkedIn o Contacto */}
-                        <i className="fas fa-envelope"></i> {/* Reemplazar con Material Icons */}
+                    <IconButton sx={{ color: '#00bcd4' }} onClick={toggleTheme}>
+                        {isDarkMode ? <Brightness7Icon /> : <Brightness4Icon />}
                     </IconButton>
                 </Box>
             </Toolbar>

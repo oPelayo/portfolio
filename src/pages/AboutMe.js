@@ -13,9 +13,9 @@ const AboutMe = () => {
         code. Always focused on hardware, I began to delve into software from then on.
         At the moment, I am focusing what I have learned towards this area, exploring different aspects of computing 
         in order to grow professionally.
-        In addition to my formal training in Java, Spring, Node.js, HTML5, CSS3, JS, Git, Maven and React, 
-        I am constantly looking to stay up to date with complementary technologies such as Docker, Kotlin, Python 
-        or TypeScript. This approach allows me to face any challenge with greater ease and versatility.
+        In addition to my formal training in Java, Spring, Maven, Node, HTML5, CSS3, JS, Git, React,Angular and Docker, 
+        I am constantly looking to stay up to date with complementary technologies such as Python, Docker, Kotlin, 
+        TypeScript or cybersecurity. This approach allows me to face any challenge with greater ease and versatility.
         I am excited about the new goal I have set for myself and I enjoy learning something new every day. 
         I am always open to opportunities and collaborations that allow me to continue growing professionally.</p>
     </div>
