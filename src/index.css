@@ -2,8 +2,13 @@
      color: rgba(255, 255, 255, 0.93); 
     background-color: #1c1e29;
 }*/
+.root header {
+    justify-content: center;
+    box-shadow: var(--Paper-shadow);
+}
 
 .root header div{
+    justify-content: center;
     padding-left: 8px;
     padding-right: 8px;
 }

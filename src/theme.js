@@ -18,7 +18,8 @@ export const lightTheme = createTheme({
       paper: '#ffffff',
     },
     text: {
-      primary: '#fff', 
+      primary: '#fff',
+      secondary: '#fff', 
     },
     icon: {
       color: '#fff', 
@@ -44,6 +45,7 @@ export const darkTheme = createTheme({
     },
     text: {
       primary: '#000', 
+      secondary: '#000'
     },
     icon: {
       color: '#000', 

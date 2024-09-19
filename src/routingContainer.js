@@ -15,9 +15,9 @@ const RoutingContainer = ({ toggleTheme, isDarkMode }) => {
   const theme = useTheme();
 
   return (
-    <Container maxWidth="sm" sx={{ backgroundColor: theme.palette.background.default }}>
+    <Container maxWidth="md" sx={{ backgroundColor: theme.palette.background.default }}>
       <Box sx={{ display: 'flex', flexDirection: 'column', height: '100vh', backgroundColor: theme.palette.background.default }}>
-        <Navbar toggleTheme={toggleTheme} isDarkMode={isDarkMode} />
+        <Navbar toggleTheme={toggleTheme} isDarkMode={isDarkMode} sx={{ borderRadius: '15px' }} />
         <Box sx={{ flex: 1 }}>
           <Home/>
           <Routes>

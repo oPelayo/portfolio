@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import IconButton from '@mui/material/IconButton';
+import MenuIcon from '@mui/icons-material/Menu';
 import Box from '@mui/material/Box';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
@@ -9,55 +10,109 @@ import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import { NavLink } from 'react-router-dom';
 import { mainNavbarItems } from './consts/navbarItems';
-import { navbarStyles } from './styles';
 import '../../index.css';
 import Brightness4Icon from '@mui/icons-material/Brightness4';
 import Brightness7Icon from '@mui/icons-material/Brightness7';
+import Drawer from '@mui/material/Drawer';
 
 const Navbar = ({ toggleTheme, isDarkMode }) => {
     const [activeLink, setActiveLink] = useState("");
+    const [mobileOpen, setMobileOpen] = useState(false);
 
     const handleActiveLink = (route) => setActiveLink(route);
 
+    const handleDrawerToggle = () => { setMobileOpen(!mobileOpen); };
+
+    const drawer = (
+        <Box sx={{ width: 250 }} onClick={handleDrawerToggle}>
+          <List>
+            {mainNavbarItems.map((item) => (
+              <ListItem
+                key={item.id}
+                component={NavLink}
+                to={item.route}
+                onClick={() => handleActiveLink(item.route)}
+                sx={{
+                  padding: '0 10px',
+                  borderBottom: item.route === activeLink ? '2px solid #00bcd4' : 'none',
+                  color: item.route === activeLink ? '#00bcd4' : '#fff',
+                  transition: 'color 0.3s ease-in-out',
+                  '&:hover': {
+                    color: '#00bcd4',
+                  },
+                }}
+              >
+                <ListItemIcon>{item.icon}</ListItemIcon>
+                <ListItemText primary={item.label} />
+              </ListItem>
+            ))}
+          </List>
+        </Box>
+      );
+
     return (
-        <AppBar position="static">
-            <Toolbar sx={{ display: 'flex', justifyContent: 'space-between' }}>
-                {/* Menú de Navegación */}
-                <Box sx={{ display: 'flex', gap: 2 }}>
-                    <List sx={{ display: 'flex', alignItems: 'center' }}>
-                        {mainNavbarItems.map((item) => (
-                            <ListItem
-                                key={item.id}
-                                component={NavLink}
-                                to={item.route}
-                                onClick={() => handleActiveLink(item.route)}
-                                sx={{
-                                    padding: '0 10px',
-                                    borderBottom: item.route === activeLink ? '2px solid #00bcd4' : 'none',
-                                    color: item.route === activeLink ? '#00bcd4' : '#fff',
-                                    transition: 'color 0.3s ease-in-out',
-                                    '&:hover': {
-                                        color: '#00bcd4',
-                                    },
-                                }}
-                            >
-                                <ListItemIcon
-                                    sx={navbarStyles.icons}
-                                >
-                                    {item.icon}
-                                </ListItemIcon>
-                                <ListItemText primary={item.label} />
-                            </ListItem>
-                        ))}
-                    </List>
-                </Box>
-                <Box>
-                    <IconButton sx={{ color: '#00bcd4' }} onClick={toggleTheme}>
-                        {isDarkMode ? <Brightness7Icon /> : <Brightness4Icon />}
+        <>
+            <AppBar position="static">
+                <Toolbar sx={{ display: 'flex', justifyContent: 'space-between' }}>
+                    
+                    {/* Mobile menu button */}
+                    <IconButton
+                        color="inherit"
+                        edge="start"
+                        onClick={handleDrawerToggle}
+                        sx={{ display: { sm: 'none' } }} // Show only on small screens
+                    >
+                        <MenuIcon />
                     </IconButton>
-                </Box>
-            </Toolbar>
-        </AppBar>
+
+                    {/* Normal Navbar for larger screens */}
+                    <Box sx={{ display: { xs: 'none', sm: 'flex' }, gap: 2 }}>
+                        <List sx={{ display: 'flex', alignItems: 'center' }}>
+                            {mainNavbarItems.map((item) => (
+                                <ListItem
+                                    key={item.id}
+                                    component={NavLink}
+                                    to={item.route}
+                                    onClick={() => handleActiveLink(item.route)}
+                                    sx={{
+                                        padding: '0 10px',
+                                        borderBottom: item.route === activeLink ? '2px solid #00bcd4' : 'none',
+                                        color: '#fff',
+                                        transition: 'color 0.3s ease-in-out',
+                                        '&:hover': {
+                                            color: '#00bcd4',
+                                        },
+                                    }}
+                                >
+                                    <ListItemIcon sx={{ color: '#fff' }} >
+                                        {item.icon}
+                                    </ListItemIcon>
+                                    <ListItemText primary={item.label} />
+                                </ListItem>
+                            ))}
+                        </List>
+                        <IconButton sx={{ color: '#00bcd4' }} onClick={toggleTheme}>
+                            {isDarkMode ? <Brightness7Icon /> : <Brightness4Icon />}
+                        </IconButton>
+                    </Box>
+                </Toolbar>
+            </AppBar>
+            {/* Drawer for mobile menu */}
+            <Drawer
+            anchor="left"
+            open={mobileOpen}
+            onClose={handleDrawerToggle}
+            ModalProps={{
+                keepMounted: true, // Better open performance on mobile.
+            }}
+            sx={{
+                display: { xs: 'block', sm: 'none' }, // Only show drawer on small screens
+                '& .MuiDrawer-paper': { boxSizing: 'border-box', width: 250 },
+            }}
+            >
+            {drawer}
+            </Drawer>
+        </>
     );
 };
 
