@@ -1,2 +1,2 @@
 # portfolio
-React-Django_Portfolio
+React-Portfolio
