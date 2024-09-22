@@ -94,9 +94,10 @@ const Navbar = ({ toggleTheme, isDarkMode }) => {
     <>
       <AppBar position="fixed" 
         sx={{
-            backgroundColor: scrolling ? "rgba(240, 240, 240, 0.1)" : "#1C1E29", 
+            backgroundColor: scrolling ? (isDarkMode ? "rgba(90, 90, 90, 0.8)" : "rgba(40, 40, 40, 0.7)") : "#1C1E29", 
             transition: "background-color 0.3s ease", 
-            backdropFilter: scrolling ? "blur(1px)" : "none", 
+            backdropFilter: scrolling ? "blur(4px)" : "none",
+            boxShadow: scrolling ? "0 4px 6px rgba(0, 0, 0, 0.1)" : "none"
         }}
       >
         <Toolbar sx={{ display: "flex", justifyContent: "space-between" }}>
@@ -106,7 +107,7 @@ const Navbar = ({ toggleTheme, isDarkMode }) => {
               color="inherit"
               edge="start"
               onClick={handleDrawerToggle}
-              sx={{ display: { sm: "none", color:'#fff', marginLeft:'-64px' } }}
+              sx={{ display: { sm: "none", color: scrolling && isDarkMode ? "#000" : "#fff", marginLeft:'-64px' } }}
             >
               <MenuIcon />
             </IconButton>
@@ -116,7 +117,8 @@ const Navbar = ({ toggleTheme, isDarkMode }) => {
               component="div"
               sx={{
                 ml: 1,
-                display: { xs: "flex", sm: "none", color:'#fff' },
+                display: { xs: "flex", sm: "none" },
+                color: scrolling && isDarkMode ? "#000" : "#fff"
               }}
             >
               oPelayo's portfolio
@@ -136,7 +138,7 @@ const Navbar = ({ toggleTheme, isDarkMode }) => {
                     padding: "0 2px",
                     border:
                       item.route === activeLink ? "2px solid #00bcd4" : "none",
-                    color: "#fff",
+                    color: scrolling && isDarkMode ? "#f5f5f5" : "#fff",
                     borderRadius: '15px',
                     transition: "color 0.3s ease-in-out",
                     "&:hover": {
@@ -144,7 +146,7 @@ const Navbar = ({ toggleTheme, isDarkMode }) => {
                     },
                   }}
                 >
-                  <ListItemIcon sx={{ color: "#fff" }}>
+                  <ListItemIcon sx={{ color: scrolling && isDarkMode ? "#f5f5f5" : "#fff" }}>
                     {item.icon}
                   </ListItemIcon>
                   <ListItemText primary={item.label} />
