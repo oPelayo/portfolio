@@ -19,9 +19,9 @@ const RoutingContainer = ({ toggleTheme, isDarkMode }) => {
       <Box sx={{ display: 'flex', flexDirection: 'column', height: '100vh', backgroundColor: theme.palette.background.default }}>
         <Navbar toggleTheme={toggleTheme} isDarkMode={isDarkMode} sx={{ borderRadius: '15px' }} />
         <Box sx={{ flex: 1 }}>
-          <Home/>
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/home" element={<Home />} />
             <Route path="/experience" element={<Experience />} />
             <Route path="/aboutme" element={<AboutMe />} />
             <Route path="*" element={<Error />} />

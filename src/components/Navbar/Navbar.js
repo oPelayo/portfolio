@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import IconButton from "@mui/material/IconButton";
@@ -19,6 +19,7 @@ import Drawer from "@mui/material/Drawer";
 const Navbar = ({ toggleTheme, isDarkMode }) => {
   const [activeLink, setActiveLink] = useState("");
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [scrolling, setScrolling] = useState(false);
 
   const handleActiveLink = (route) => setActiveLink(route);
 
@@ -50,13 +51,13 @@ const Navbar = ({ toggleTheme, isDarkMode }) => {
             <ListItemText primary={item.label} />
           </ListItem>
         ))}
-         <ListItem button onClick={toggleTheme} sx={{
+         <ListItem onClick={toggleTheme} sx={{
             padding: "0 10px",
             color:'#1c1e29',
             transition: "color 0.3s ease-in-out",
                 "&:hover": {
-                color: "#00bcd4",  // Color del texto en hover
-                backgroundColor: "transparent", // Quita el fondo sombreado en hover
+                color: "#00bcd4",
+                backgroundColor: "transparent",
                 },
             }}         
          >
@@ -71,13 +72,33 @@ const Navbar = ({ toggleTheme, isDarkMode }) => {
           />
         </ListItem>
       </List>
-      
     </Box>
   );
 
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 56) {
+        setScrolling(true);  
+      } else {
+        setScrolling(false);  
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+  
+
   return (
     <>
-      <AppBar position="static">
+      <AppBar position="fixed" 
+        sx={{
+            backgroundColor: scrolling ? "rgba(240, 240, 240, 0.1)" : "#1C1E29", 
+            transition: "background-color 0.3s ease", 
+            backdropFilter: scrolling ? "blur(1px)" : "none", 
+        }}
+      >
         <Toolbar sx={{ display: "flex", justifyContent: "space-between" }}>
           {/* Mobile menu button */}
           <Box sx={{ display: "flex", alignItems: "center" }}>
@@ -85,16 +106,17 @@ const Navbar = ({ toggleTheme, isDarkMode }) => {
               color="inherit"
               edge="start"
               onClick={handleDrawerToggle}
-              sx={{ display: { sm: "none" } }}
+              sx={{ display: { sm: "none", color:'#fff', marginLeft:'-64px' } }}
             >
               <MenuIcon />
             </IconButton>
+            <Box sx={{ width: '48px', display: { sm: "none"} }} />
             <Typography
               variant="h6"
               component="div"
               sx={{
                 ml: 1,
-                display: { xs: "flex", sm: "none" },
+                display: { xs: "flex", sm: "none", color:'#fff' },
               }}
             >
               oPelayo's portfolio
@@ -111,10 +133,11 @@ const Navbar = ({ toggleTheme, isDarkMode }) => {
                   to={item.route}
                   onClick={() => handleActiveLink(item.route)}
                   sx={{
-                    padding: "0 10px",
-                    borderBottom:
+                    padding: "0 2px",
+                    border:
                       item.route === activeLink ? "2px solid #00bcd4" : "none",
                     color: "#fff",
+                    borderRadius: '15px',
                     transition: "color 0.3s ease-in-out",
                     "&:hover": {
                       color: "#00bcd4",
@@ -127,10 +150,11 @@ const Navbar = ({ toggleTheme, isDarkMode }) => {
                   <ListItemText primary={item.label} />
                 </ListItem>
               ))}
+              <IconButton sx={{ color: "#00bcd4" }} onClick={toggleTheme}>
+                {isDarkMode ? <Brightness7Icon /> : <Brightness4Icon />}
+              </IconButton>
             </List>
-            <IconButton sx={{ color: "#00bcd4" }} onClick={toggleTheme}>
-              {isDarkMode ? <Brightness7Icon /> : <Brightness4Icon />}
-            </IconButton>
+            
           </Box>
         </Toolbar>
       </AppBar>
@@ -143,7 +167,7 @@ const Navbar = ({ toggleTheme, isDarkMode }) => {
           keepMounted: true, // Better open performance on mobile.
         }}
         sx={{
-          display: { xs: "block", sm: "none" }, // Only show drawer on small screens
+          display: { xs: "block", sm: "none" }, 
           "& .MuiDrawer-paper": { boxSizing: "border-box", width: 250 },
         }}
       >
