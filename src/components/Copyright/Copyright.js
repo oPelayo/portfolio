@@ -1,29 +1,67 @@
+import React from 'react';
 import Typography from '@mui/material/Typography';
 import Link from '@mui/material/Link';
+import IconButton from '@mui/material/IconButton';
+import GitHubIcon from '@mui/icons-material/GitHub';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import Box from '@mui/material/Box';
 
 function Copyright() {
   return (
-    <Typography 
-      variant="body2" 
-      color="text.secondary" 
-      align="center"
+    <Box
+      component="footer"
       sx={{
         color: 'white',
         position: 'fixed',
-        left:'0px',
+        left: '0px',
         bottom: 0,
         width: '100%',
         backgroundColor: '#1c1e29', 
-        padding: '10px' 
+        padding: '10px',
+        display: 'flex',
+        justifyContent: 'center', 
+        alignItems: 'center', 
+        gap: 2,
       }}
     >
-      {'Copyright © '}
-      <Link color="inherit" href="https://www.linkedin.com/in/opelayo">
-        oPelayo
-      </Link>{' '}
-      {new Date().getFullYear()}
-      {'.'}
-    </Typography>
+      {/* Texto de Copyright */}
+      <Typography 
+        variant="body2" 
+        color="text.secondary" 
+        component="div" 
+        sx={{ color: 'white' }}
+      >
+        {'Copyright © '}
+        <Link color="inherit" href="mailto:opelayodev@gmail.com">
+          oPelayo
+        </Link>{' '}
+        {new Date().getFullYear()}
+        {'.'}
+      </Typography>
+
+      {/* Iconos de redes sociales a la derecha */}
+      <Box>
+        <IconButton
+          component={Link}
+          href="https://github.com/tu-github-username" 
+          target="_blank"
+          rel="noopener noreferrer"
+          sx={{ color: 'white' }} 
+        >
+          <GitHubIcon />
+        </IconButton>
+
+        <IconButton
+          component={Link}
+          href="https://www.linkedin.com/in/opelayo" 
+          target="_blank"
+          rel="noopener noreferrer"
+          sx={{ color: 'white' }} 
+        >
+          <LinkedInIcon />
+        </IconButton>
+      </Box>
+    </Box>
   );
 }
 

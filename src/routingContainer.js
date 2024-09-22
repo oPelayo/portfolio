@@ -9,7 +9,7 @@ import Home from './pages/Home';
 import Experience from './pages/Experience';
 import Error from './pages/Error';
 import AboutMe from './pages/AboutMe';
-
+import Proyects from './pages/Proyects';
 
 const RoutingContainer = ({ toggleTheme, isDarkMode }) => {
   const theme = useTheme();
@@ -23,6 +23,7 @@ const RoutingContainer = ({ toggleTheme, isDarkMode }) => {
             <Route path="/" element={<Home />} />
             <Route path="/home" element={<Home />} />
             <Route path="/experience" element={<Experience />} />
+            <Route path="/proyects" element={<Proyects />} />
             <Route path="/aboutme" element={<AboutMe />} />
             <Route path="*" element={<Error />} />
           </Routes>

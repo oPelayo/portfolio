@@ -40,7 +40,7 @@ const Navbar = ({ toggleTheme, isDarkMode }) => {
               padding: "0 10px",
               borderBottom:
                 item.route === activeLink ? "2px solid #00bcd4" : "none",
-              color: item.route === activeLink ? "#00bcd4" : "#1c1e29",
+              color: item.route === activeLink ? "#00bcd4" : (isDarkMode ? "#f5f5f5" : "#1c1e29"),
               transition: "color 0.3s ease-in-out",
               "&:hover": {
                 color: "#00bcd4",
@@ -53,7 +53,7 @@ const Navbar = ({ toggleTheme, isDarkMode }) => {
         ))}
          <ListItem onClick={toggleTheme} sx={{
             padding: "0 10px",
-            color:'#1c1e29',
+            color: isDarkMode ? "#f5f5f5" : "#1c1e29",
             transition: "color 0.3s ease-in-out",
                 "&:hover": {
                 color: "#00bcd4",
@@ -64,7 +64,7 @@ const Navbar = ({ toggleTheme, isDarkMode }) => {
           <ListItemIcon sx={{ color:'00bcd4' }}>
             {isDarkMode ? <Brightness7Icon /> : <Brightness4Icon />}
           </ListItemIcon>
-          <ListItemText primary="Toggle Theme" sx={{ color: '#1c1e29', transition: "color 0.3s ease-in-out",
+          <ListItemText primary="Toggle Theme" sx={{ color: isDarkMode ? "#f5f5f5" : "#1c1e29", transition: "color 0.3s ease-in-out",
               "&:hover": {
                 color: "#00bcd4",
               },   
@@ -104,6 +104,7 @@ const Navbar = ({ toggleTheme, isDarkMode }) => {
           {/* Mobile menu button */}
           <Box sx={{ display: "flex", alignItems: "center" }}>
             <IconButton
+              aria-label="Open navigation menu"
               color="inherit"
               edge="start"
               onClick={handleDrawerToggle}
@@ -146,8 +147,10 @@ const Navbar = ({ toggleTheme, isDarkMode }) => {
                     },
                   }}
                 >
-                  <ListItemIcon sx={{ color: scrolling && isDarkMode ? "#f5f5f5" : "#fff" }}>
-                    {item.icon}
+                  <ListItemIcon aria-label="Open navigation menu"
+                    sx={{ color: scrolling && isDarkMode ? "#f5f5f5" : "#fff" }}
+                  >
+                        {item.icon}
                   </ListItemIcon>
                   <ListItemText primary={item.label} />
                 </ListItem>
