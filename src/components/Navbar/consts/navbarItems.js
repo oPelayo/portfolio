@@ -1,4 +1,3 @@
-import DnsIcon from '@mui/icons-material/Dns';
 import PersonIcon from '@mui/icons-material/Person';
 import HistoryIcon from '@mui/icons-material/History'
 import ProyectIcon from '@mui/icons-material/Inventory2';
@@ -28,13 +27,6 @@ export const mainNavbarItems = [
         icon: <PersonIcon />,
         label: 'About me ',
         route: 'aboutme',
-    },
-    {
-        id: 4,
-        icon: <DnsIcon />,
-        label: 'Api Nasa',
-        route: 'apiNasa',
-    }
-    
-  
+    },  
+
 ]

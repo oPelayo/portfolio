@@ -9,7 +9,18 @@ function Experience() {
   return (
     <div>
       <h2 style={{ color: theme.palette.text.primary }}>Work Experience</h2>
-      <List sx={{ backgroundColor: theme.palette.background.default }}>
+      <List sx={{
+        position: 'relative',
+        '&::before': {
+          content: '""',
+          position: 'absolute',
+          left: 0,
+          top: 0,
+          bottom: 0,
+          width: '2px',
+          backgroundColor: '#ffa500', // Change the color here
+        },
+      }}>
         <ListItem>
           <ListItemIcon sx={{ color: theme.palette.icon.color }}>
             <WorkIcon />
@@ -29,7 +40,7 @@ function Experience() {
             <WorkIcon />
           </ListItemIcon>
           <ListItemText
-            primary="Web maintenance assistant"
+            primary="Web maintenance assistant, technical salesman"
             secondary="In-Gravity S.L."
             sx={{
               "& .MuiListItem-root": {

@@ -24,7 +24,7 @@ function Copyright() {
         gap: 2,
       }}
     >
-      {/* Texto de Copyright */}
+
       <Typography 
         variant="body2" 
         color="text.secondary" 
@@ -38,12 +38,11 @@ function Copyright() {
         {new Date().getFullYear()}
         {'.'}
       </Typography>
-
-      {/* Iconos de redes sociales a la derecha */}
+      <Box sx={{ width: '20%'}} />
       <Box>
         <IconButton
           component={Link}
-          href="https://github.com/tu-github-username" 
+          href="https://github.com/oPelayo" 
           target="_blank"
           rel="noopener noreferrer"
           sx={{ color: 'white' }} 
