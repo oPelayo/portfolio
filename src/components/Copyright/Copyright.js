@@ -32,7 +32,7 @@ function Copyright() {
         sx={{ color: 'white' }}
       >
         {'Copyright © '}
-        <Link color="inherit" href="mailto:opelayodev@gmail.com">
+        <Link color="inherit" href="mailto:opelayodev@gmail.com?subject=Contact%20trougth%20portfolio">
           oPelayo
         </Link>{' '}
         {new Date().getFullYear()}
