@@ -43,7 +43,7 @@ const Navbar = ({ toggleTheme, isDarkMode }) => {
               color: item.route === activeLink ? "#FFA500" : (isDarkMode ? "#f5f5f5" : "#1c1e29"),
               transition: "color 0.3s ease-in-out",
               "&:hover": {
-                color: "#00bcd4",
+                color: "#FFA500",
               },
             }}
           >
@@ -56,7 +56,7 @@ const Navbar = ({ toggleTheme, isDarkMode }) => {
             color: isDarkMode ? "#f5f5f5" : "#1c1e29",
             transition: "color 0.3s ease-in-out",
                 "&:hover": {
-                color: "#00bcd4",
+                color: "#FFA500",
                 backgroundColor: "transparent",
                 },
             }}         
@@ -66,7 +66,7 @@ const Navbar = ({ toggleTheme, isDarkMode }) => {
           </ListItemIcon>
           <ListItemText primary="Toggle Theme" sx={{ color: isDarkMode ? "#f5f5f5" : "#1c1e29", transition: "color 0.3s ease-in-out",
               "&:hover": {
-                color: "#00bcd4",
+                color: "#FFA500",
               },   
             }} 
           />
@@ -152,7 +152,7 @@ const Navbar = ({ toggleTheme, isDarkMode }) => {
                   >
                         {item.icon}
                   </ListItemIcon>
-                  <ListItemText primary={item.label} />
+                  <ListItemText primary={item.label} sx={{ whiteSpace: 'nowrap'}} />
                 </ListItem>
               ))}
               <IconButton sx={{ color: "#FFA500" }} onClick={toggleTheme}>

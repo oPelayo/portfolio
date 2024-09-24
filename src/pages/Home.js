@@ -20,7 +20,7 @@ function Home() {
       </Box>
       
       {/* Descripción principal */}
-      <Typography variant="body1" sx={{ color: '#aaa', marginBottom: 2 }}>
+      <Typography variant="body1" sx={{ color: theme.palette.text.primary, marginBottom: 2 }}>
         I am a full-stack developer with a strong foundation in Java, Spring, Node.js, Angular, and React.
         My experience co-founding an association has provided me with strong skills in project management,
         teamwork, and problem-solving, which I now apply to build innovative web solutions. My passion for 
@@ -32,9 +32,9 @@ function Home() {
         <Typography variant="h6" sx={{ color: '#ffa500', fontWeight: 'bold' }}>
           My Skills:
         </Typography>
-        <ul style={{ color: '#aaa', marginBottom: '1rem' }}>
-          <li>Full-stack development using Java, Spring, Node.js, and Angular</li>
-          <li>Experience with React for frontend development</li>
+        <ul style={{ color: theme.palette.text.primary, marginBottom: '1rem' }}>
+          <li>Backend development using Java, Spring & SpringBoot, Node.js</li>
+          <li>Experience with Angular and React for frontend development</li>
           <li>Proficient in project management and teamwork</li>
           <li>Passionate about staying up to date with latest technologies</li>
         </ul>
