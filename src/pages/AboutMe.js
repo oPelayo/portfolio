@@ -7,7 +7,7 @@ const AboutMe = () => {
   const theme= useTheme();
 
   return (
-    <Box sx={{ marginTop: 4, padding: 3 }}>
+    <Box sx={{ marginTop: 4 }}>
       <Box sx={{ display: "flex", alignItems: "center", mb: 3 }}>
         <PersonIcon sx={{ color: '#ffa500', fontSize: "2.5rem", marginRight: 1 }} />
         <Typography

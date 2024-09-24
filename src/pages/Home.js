@@ -7,7 +7,7 @@ function Home() {
   const theme = useTheme();
 
   return (
-    <Box sx={{ marginTop: 4, padding: 2 }}>
+    <Box sx={{ marginTop: 4 }}>
       {/* Título principal con icono */}
       <Box sx={{ display: "flex", alignItems: "center", mb: 3 }}>
         <HomeIcon sx={{ color: '#ffa500', fontSize: "2.5rem", marginRight: 1 }} />
@@ -24,8 +24,7 @@ function Home() {
         I am a full-stack developer with a strong foundation in Java, Spring, Node.js, Angular, and React.
         My experience co-founding an association has provided me with strong skills in project management,
         teamwork, and problem-solving, which I now apply to build innovative web solutions. My passion for 
-        technology drives me to always stay up to date with the latest trends, such as Docker, Kotlin, and 
-        TypeScript.
+        technology drives me to always stay up to date with the latest trends, such as Docker, Kotlin, and Python.
       </Typography>
 
       {/* Lista de habilidades, similar a la lista de experiencia */}

@@ -39,8 +39,8 @@ const Navbar = ({ toggleTheme, isDarkMode }) => {
             sx={{
               padding: "0 10px",
               borderBottom:
-                item.route === activeLink ? "2px solid #00bcd4" : "none",
-              color: item.route === activeLink ? "#00bcd4" : (isDarkMode ? "#f5f5f5" : "#1c1e29"),
+                item.route === activeLink ? "2px solid #FFA500" : "none",
+              color: item.route === activeLink ? "#FFA500" : (isDarkMode ? "#f5f5f5" : "#1c1e29"),
               transition: "color 0.3s ease-in-out",
               "&:hover": {
                 color: "#00bcd4",
@@ -138,12 +138,12 @@ const Navbar = ({ toggleTheme, isDarkMode }) => {
                   sx={{
                     padding: "0 2px",
                     border:
-                      item.route === activeLink ? "2px solid #00bcd4" : "none",
+                      item.route === activeLink ? "2px solid #FFA500" : "none",
                     color: scrolling && isDarkMode ? "#f5f5f5" : "#fff",
                     borderRadius: '15px',
                     transition: "color 0.3s ease-in-out",
                     "&:hover": {
-                      color: "#00bcd4",
+                      color: "#FFA500",
                     },
                   }}
                 >
@@ -155,7 +155,7 @@ const Navbar = ({ toggleTheme, isDarkMode }) => {
                   <ListItemText primary={item.label} />
                 </ListItem>
               ))}
-              <IconButton sx={{ color: "#00bcd4" }} onClick={toggleTheme}>
+              <IconButton sx={{ color: "#FFA500" }} onClick={toggleTheme}>
                 {isDarkMode ? <Brightness7Icon /> : <Brightness4Icon />}
               </IconButton>
             </List>

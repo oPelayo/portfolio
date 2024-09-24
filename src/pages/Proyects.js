@@ -8,13 +8,14 @@ import MigralogImage from './../imgs/Migralog.png';
 import NexuscomImage from './../imgs/Nexuscom.png';
 
 function Proyects() {
+  /* Proyects data list */
   const projectData = [
     {
       title: 'Migralog - Migraine monitoring app',
       description: '',
       image: MigralogImage,
       tags: ['Spring', 'Angular', 'MySQL', 'Docker' ],
-      codeLink: '#',
+      codeLink: "https://github.com/oPelayo/the_way",
       previewLink: '#',
     },
     {
@@ -22,7 +23,7 @@ function Proyects() {
       description: 'This project represents my inaugural venture into web development using Java, HTML, CSS, and JS, with MySQL',
       image: NexuscomImage,
       tags: ['Native Java', 'HTML','CSS', 'JS', 'MySQL'],
-      codeLink: '#',
+      codeLink: "https://github.com/oPelayo/the_Way_two", 
       previewLink: '#',
     }
   ]
@@ -31,7 +32,7 @@ function Proyects() {
 
   return (
     <Box sx={{ padding: 4 }}>
-    {/* Título de la sección */}
+    {/* Tittle */}
     <Box sx={{ display: 'flex', alignItems: 'center', mb: 3 }}>
       <WebIcon sx={{ color: '#ffa500', fontSize: '2.5rem', marginRight: 1 }} />
       <Typography
@@ -42,7 +43,7 @@ function Proyects() {
       </Typography>
     </Box>
 
-    {/* Lista de Proyectos */}
+    {/* Proyects list */}
     {projectData.map((project, index) => (
       <Box
         key={index}
@@ -57,7 +58,7 @@ function Proyects() {
           boxShadow: '0px 4px 12px rgba(0,0,0,0.2)'
         }}
       >
-        {/* Imagen del Proyecto */}
+        {/* Proyect Image */}
         <Box sx={{ flex: 1, paddingRight: { md: 2 }, marginBottom: { xs: 2, md: 0 } }}>
           <img
             src={project.image}
@@ -66,7 +67,7 @@ function Proyects() {
           />
         </Box>
 
-        {/* Detalles del Proyecto */}
+        {/* Proyect details  */}
         <Box sx={{ flex: 2 }}>
           <Typography variant="h5" sx={{ color: '#ffa500', fontWeight: 'bold' }}>
             {project.title}
@@ -82,7 +83,7 @@ function Proyects() {
             ))}
           </Box>
 
-          {/* Botones de acciones */}
+          {/* Buttons */}
           <Box sx={{ display: 'flex', gap: 2 }}>
             <Button
               variant="outlined"
