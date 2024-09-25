@@ -1,5 +1,5 @@
 import React from 'react';
-import { Routes, Route } from "react-router-dom";
+//import { Routes, Route } from "react-router-dom";
 import Container from '@mui/material/Container';
 import Box from '@mui/material/Box';
 import { useTheme } from '@mui/material/styles';
@@ -7,7 +7,7 @@ import Navbar from './components/Navbar/Navbar';
 import Copyright from './components/Copyright/Copyright';
 import Home from './pages/Home';
 import Experience from './pages/Experience';
-import Error from './pages/Error';
+// import Error from './pages/Error';
 import AboutMe from './pages/AboutMe';
 import Proyects from './pages/Proyects';
 
@@ -19,6 +19,23 @@ const RoutingContainer = ({ toggleTheme, isDarkMode }) => {
       <Box sx={{ display: 'flex', flexDirection: 'column', height: '100vh', backgroundColor: theme.palette.background.default }}>
         <Navbar toggleTheme={toggleTheme} isDarkMode={isDarkMode} sx={{ borderRadius: '15px' }} />
         <Box sx={{ flex: 1 }}>
+          <section id="home">
+            <Home />
+          </section>
+
+          <section id="experience">
+            <Experience />
+          </section>
+
+          <section id="proyects">
+            <Proyects />
+          </section>
+
+          <section id="aboutme">
+            <AboutMe />
+          </section>
+
+          {/* Rutes, only for routed components 
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/home" element={<Home />} />
@@ -26,7 +43,7 @@ const RoutingContainer = ({ toggleTheme, isDarkMode }) => {
             <Route path="/proyects" element={<Proyects />} />
             <Route path="/aboutme" element={<AboutMe />} />
             <Route path="*" element={<Error />} />
-          </Routes>
+          </Routes>*/}
         </Box>
         <Copyright />
       </Box>

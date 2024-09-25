@@ -9,7 +9,7 @@ import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
-import { NavLink } from "react-router-dom";
+//import { NavLink } from "react-router-dom";
 import { mainNavbarItems } from "./consts/navbarItems";
 import "../../index.css";
 import Brightness4Icon from "@mui/icons-material/Brightness4";
@@ -21,32 +21,76 @@ const Navbar = ({ toggleTheme, isDarkMode }) => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [scrolling, setScrolling] = useState(false);
 
-  const handleActiveLink = (route) => setActiveLink(route);
-
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
   };
+
+  const handleScrollToSection = (sectionId) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      const yOffset = -64; 
+      const yPosition = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+      window.scrollTo({ top: yPosition, behavior: 'smooth' });
+    }
+  };
+
+  const handleScroll = () => {
+    const sections = mainNavbarItems.map(item => document.getElementById(item.route));
+    const scrollPos = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
+
+    let activeSection = "";
+    
+    for (let i = 0; i < sections.length; i++) {
+      const section = sections[i];
+      if (section && scrollPos >= section.offsetTop - 70) { 
+        activeSection = section.id;
+      }
+    }
+
+    setActiveLink(activeSection); 
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 56) {
+        setScrolling(true);  
+      } else {
+        setScrolling(false);  
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const drawer = (
     <Box sx={{ width: 250 }} onClick={handleDrawerToggle}>
       <List>
         {mainNavbarItems.map((item) => (
           <ListItem
-            key={item.id}
-            component={NavLink}
-            to={item.route}
-            onClick={() => handleActiveLink(item.route)}
-            sx={{
-              padding: "0 10px",
-              borderBottom:
-                item.route === activeLink ? "2px solid #FFA500" : "none",
-              color: item.route === activeLink ? "#FFA500" : (isDarkMode ? "#f5f5f5" : "#1c1e29"),
-              transition: "color 0.3s ease-in-out",
-              "&:hover": {
-                color: "#FFA500",
-              },
-            }}
-          >
+          key={item.id}
+          onClick={() => {
+            handleScrollToSection(item.route); // Desplaza a la sección
+            setMobileOpen(false); // Cierra el menú móvil
+          }}
+          sx={{
+            padding: "0 10px",
+            borderBottom:
+              item.route === activeLink ? "2px solid #FFA500" : "none",
+            color: item.route === activeLink ? "#FFA500" : (isDarkMode ? "#f5f5f5" : "#1c1e29"),
+            transition: "color 0.3s ease-in-out",
+            "&:hover": {
+              color: "#FFA500",
+            },
+          }}
+        >
             <ListItemIcon>{item.icon}</ListItemIcon>
             <ListItemText primary={item.label} />
           </ListItem>
@@ -74,22 +118,7 @@ const Navbar = ({ toggleTheme, isDarkMode }) => {
       </List>
     </Box>
   );
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 56) {
-        setScrolling(true);  
-      } else {
-        setScrolling(false);  
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
   
-
   return (
     <>
       <AppBar position="fixed" 
@@ -132,9 +161,7 @@ const Navbar = ({ toggleTheme, isDarkMode }) => {
               {mainNavbarItems.map((item) => (
                 <ListItem
                   key={item.id}
-                  component={NavLink}
-                  to={item.route}
-                  onClick={() => handleActiveLink(item.route)}
+                  onClick={() => handleScrollToSection(item.route)}
                   sx={{
                     padding: "0 2px",
                     border:
