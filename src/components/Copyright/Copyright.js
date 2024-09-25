@@ -40,14 +40,14 @@ function Copyright() {
         {new Date().getFullYear()}
         {'.'}
       </Typography>
-      <Box sx={{ width: '20%', }} />
+      
       <Box>
         <IconButton
           component={Link}
           href="https://github.com/oPelayo" 
           target="_blank"
           rel="noopener noreferrer"
-          sx={{ color: 'white', whiteSpace: 'nowrap' }} 
+          sx={{ color: 'white', p: { xs: 0.5, sm: 1 } }} 
         >
           <GitHubIcon />
         </IconButton>
@@ -57,7 +57,7 @@ function Copyright() {
           href="https://www.linkedin.com/in/opelayo" 
           target="_blank"
           rel="noopener noreferrer"
-          sx={{ color: 'white', whiteSpace: 'nowrap' }} 
+          sx={{ color: 'white', p: { xs: 0.5, sm: 1 } }} 
         >
           <LinkedInIcon />
         </IconButton>
