@@ -12,7 +12,7 @@ function Proyects() {
   const projectData = [
     {
       title: 'Migralog - Migraine monitoring app',
-      description: 'Final degree project rated as excellent',
+      description: 'Final degree project rated as excellent. I seek to develop a solution to help doctors find the specific causes of migraine in each person, analyzing lifestyle habits and frequencies.',
       image: MigralogImage,
       tags: ['Spring', 'Angular', 'MySQL', 'Docker' ],
       codeLink: "https://github.com/oPelayo/the_way",
@@ -20,9 +20,9 @@ function Proyects() {
     },
     {
       title: 'Nexuscom',
-      description: 'This project represents my inaugural venture into web development using Java, HTML, CSS, and JS, with MySQL',
+      description: 'This project represents my inaugural venture into web development. I am looking to develop a solution for a web store with a physical POS and a single customer database.',
       image: NexuscomImage,
-      tags: ['Native Java', 'HTML','CSS', 'JS', 'MySQL'],
+      tags: ['Native Java', 'HTML','CSS', 'JS', 'MySQL', 'Apache'],
       codeLink: "https://github.com/oPelayo/the_Way_two", 
       previewLink: '#',
     }

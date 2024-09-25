@@ -19,7 +19,7 @@ function Copyright() {
         backgroundColor: '#1c1e29', 
         padding: '10px',
         display: 'flex',
-        justifyContent: 'space-around', 
+        justifyContent: 'space-evenly', 
         alignItems: 'center', 
         gap: 2,
         flexWrap: 'nowrap',
