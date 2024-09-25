@@ -39,7 +39,7 @@ function Proyects() {
           variant="h4"
           sx={{ fontWeight: 'bold', color: theme.palette.text.primary, lineHeight: 1 }}
         >
-          Proyectos
+          Proyects
         </Typography>
       </Box>
 

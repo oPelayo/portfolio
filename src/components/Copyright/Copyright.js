@@ -22,6 +22,8 @@ function Copyright() {
         justifyContent: 'center', 
         alignItems: 'center', 
         gap: 2,
+        flexWrap: 'nowrap',
+        px: { xs: 2, sm: 4 },
       }}
     >
 
@@ -45,7 +47,7 @@ function Copyright() {
           href="https://github.com/oPelayo" 
           target="_blank"
           rel="noopener noreferrer"
-          sx={{ color: 'white' }} 
+          sx={{ color: 'white', whiteSpace: 'nowrap' }} 
         >
           <GitHubIcon />
         </IconButton>
