@@ -19,7 +19,7 @@ function Copyright() {
         backgroundColor: '#1c1e29', 
         padding: '10px',
         display: 'flex',
-        justifyContent: 'center', 
+        justifyContent: 'space-between', 
         alignItems: 'center', 
         gap: 2,
         flexWrap: 'nowrap',
@@ -41,7 +41,7 @@ function Copyright() {
         {'.'}
       </Typography>
       
-      <Box>
+      <Box sx={{ whiteSpace: 'nowrap'}}>
         <IconButton
           component={Link}
           href="https://github.com/oPelayo" 

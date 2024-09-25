@@ -34,7 +34,7 @@ function Home() {
         </Typography>
         <ul style={{ color: theme.palette.text.primary, marginBottom: '1rem' }}>
           <li>Backend development using Java, Spring & SpringBoot, Node.js</li>
-          <li>Experience with Angular and React for frontend development</li>
+          <li>Frontend development with Angular and React </li>
           <li>Proficient in project management and teamwork</li>
           <li>Passionate about staying up to date with latest technologies</li>
         </ul>
