@@ -15,7 +15,7 @@ function Home() {
           variant="h4"
           sx={{ fontWeight: "bold", color: theme.palette.text.primary, lineHeight: 1 }}
         >
-          Pelayo's Portfolio
+          oPelayo's Portfolio
         </Typography>
       </Box>
       
