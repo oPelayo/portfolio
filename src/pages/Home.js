@@ -1,7 +1,7 @@
 import React from 'react';
 import { Typography, Box } from '@mui/material';
 import { useTheme } from "@mui/material/styles";
-import HomeIcon from '@mui/icons-material/Home'; 
+import ContactPage from '@mui/icons-material/ContactPage'; 
 
 function Home() {
   const theme = useTheme();
@@ -10,12 +10,12 @@ function Home() {
     <Box sx={{ marginTop: 4 }}>
       {/* Título principal con icono */}
       <Box sx={{ display: "flex", alignItems: "center", mb: 3 }}>
-        <HomeIcon sx={{ color: '#ffa500', fontSize: "2.5rem", marginRight: 1 }} />
+        <ContactPage sx={{ color: '#ffa500', fontSize: "2.5rem", marginRight: 1 }} />
         <Typography
           variant="h4"
-          sx={{ fontWeight: "bold", color: theme.palette.text.primary, lineHeight: 1 }}
+          sx={{ fontWeight: "bold", color: theme.palette.text.primary, lineHeight: 1, flexWrap: 'nowrap', }}
         >
-          oPelayo's Portfolio
+          oPelayo's portfolio
         </Typography>
       </Box>
       

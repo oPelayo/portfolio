@@ -15,11 +15,11 @@ function Copyright() {
         position: 'fixed',
         left: '0px',
         bottom: 0,
-        width: '80%',
+        width: '100%',
         backgroundColor: '#1c1e29', 
         padding: '10px',
         display: 'flex',
-        justifyContent: 'space-between', 
+        justifyContent: 'space-around', 
         alignItems: 'center', 
         gap: 2,
         flexWrap: 'nowrap',
@@ -31,7 +31,7 @@ function Copyright() {
         variant="body2" 
         color="text.secondary" 
         component="div" 
-        sx={{ color: 'white', whiteSpace: 'nowrap' }}
+        sx={{ color: 'white', whiteSpace: 'nowrap', textAlign: 'center' }}
       >
         {'Copyright © '}
         <Link color="inherit" href="mailto:opelayodev@gmail.com?subject=Contact%20trougth%20portfolio">
