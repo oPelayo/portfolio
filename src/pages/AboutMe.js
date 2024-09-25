@@ -7,7 +7,7 @@ const AboutMe = () => {
   const theme= useTheme();
 
   return (
-    <Box sx={{ marginTop: 4, marginBottom: "80px" }}>
+    <Box sx={{ marginTop: 4, marginBottom: "88px" }}>
       <Box sx={{ display: "flex", alignItems: "center", mb: 3 }}>
         <PersonIcon sx={{ color: '#ffa500', fontSize: "2.5rem", marginRight: 1 }} />
         <Typography
@@ -17,11 +17,10 @@ const AboutMe = () => {
           About Me
         </Typography>
       </Box>
-      {/* Descripción con estilo de párrafo */}
       <Typography
         variant="body1"
         sx={{
-          color: "text.secondary", // Usa el color secundario que aplicaste en otras páginas
+          color: "text.secondary", 
           lineHeight: 1.6,
           marginBottom: 2,
         }}
