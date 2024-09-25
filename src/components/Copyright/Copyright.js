@@ -15,7 +15,7 @@ function Copyright() {
         position: 'fixed',
         left: '0px',
         bottom: 0,
-        width: '100%',
+        width: '80%',
         backgroundColor: '#1c1e29', 
         padding: '10px',
         display: 'flex',
