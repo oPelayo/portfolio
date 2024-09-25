@@ -2,7 +2,7 @@ import React from "react";
 import { Typography, Box, Button, Chip } from '@mui/material';
 import { useTheme } from "@mui/material/styles";
 import CodeIcon from '@mui/icons-material/Code';
-import VisibilityIcon from '@mui/icons-material/Visibility';
+/*import VisibilityIcon from '@mui/icons-material/Visibility';*/
 import WebIcon from '@mui/icons-material/Web';
 import MigralogImage from './../imgs/Migralog.png';
 import NexuscomImage from './../imgs/Nexuscom.png';
@@ -56,8 +56,8 @@ function Proyects() {
             marginBottom: 4,
             padding: 3,
             boxShadow: '0px 4px 12px rgba(0,0,0,0.2)',
-            flexWrap: { xs: 'wrap', md: 'nowrap' }, // Asegura que el contenido se envuelva en pantallas pequeñas
-            maxWidth: '100%', // Evita que el contenido se desborde
+            flexWrap: { xs: 'wrap', md: 'nowrap' }, 
+            maxWidth: '100%', 
           }}
         >
           {/* Project Image */}
@@ -66,8 +66,8 @@ function Proyects() {
               flex: 1,
               paddingRight: { md: 2 },
               marginBottom: { xs: 2, md: 0 },
-              width: '100%', // Asegura que la imagen se ajuste al contenedor
-              maxWidth: { xs: '100%', md: '300px' }, // Limita el ancho en pantallas pequeñas
+              width: '100%', 
+              maxWidth: { xs: '100%', md: '300px' }, 
             }}
           >
             <img
@@ -107,7 +107,8 @@ function Proyects() {
               >
                 Code
               </Button>
-              {/*<Button
+              {/*Preview button
+              <Button
                 variant="outlined"
                 sx={{
                   color: '#fff',
