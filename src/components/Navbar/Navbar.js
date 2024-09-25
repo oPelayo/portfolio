@@ -77,8 +77,8 @@ const Navbar = ({ toggleTheme, isDarkMode }) => {
           <ListItem
           key={item.id}
           onClick={() => {
-            handleScrollToSection(item.route); // Desplaza a la sección
-            setMobileOpen(false); // Cierra el menú móvil
+            handleScrollToSection(item.route); 
+            setMobileOpen(false); 
           }}
           sx={{
             padding: "0 10px",

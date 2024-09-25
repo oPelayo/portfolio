@@ -29,7 +29,7 @@ function Copyright() {
         variant="body2" 
         color="text.secondary" 
         component="div" 
-        sx={{ color: 'white' }}
+        sx={{ color: 'white', whiteSpace: 'nowrap' }}
       >
         {'Copyright © '}
         <Link color="inherit" href="mailto:opelayodev@gmail.com?subject=Contact%20trougth%20portfolio">
@@ -38,7 +38,7 @@ function Copyright() {
         {new Date().getFullYear()}
         {'.'}
       </Typography>
-      <Box sx={{ width: '20%'}} />
+      <Box sx={{ width: '20%', }} />
       <Box>
         <IconButton
           component={Link}
@@ -55,7 +55,7 @@ function Copyright() {
           href="https://www.linkedin.com/in/opelayo" 
           target="_blank"
           rel="noopener noreferrer"
-          sx={{ color: 'white' }} 
+          sx={{ color: 'white', whiteSpace: 'nowrap' }} 
         >
           <LinkedInIcon />
         </IconButton>
