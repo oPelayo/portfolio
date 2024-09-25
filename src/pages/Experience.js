@@ -52,7 +52,19 @@ const experiences = [
       "- Educational interventions, supervision of guidelines and methodologies to be applied.",
       "- Team management (6 people)"
     ]
+  },
+  {
+    title: "Destinatur founder, project developer and CMS Joomla web developer",
+    company: "Asoc. Destinatur",
+    date: "2013-2017",
+    description:[
+      "- Development of educational projects and its implementation.",
+      "- Development of the website with Joomla CMS",
+      "- Treasurer of the association",
+      "- Management of the association"
+    ]
   }
+
 ]
 
 function Experience() {
@@ -74,7 +86,7 @@ function Experience() {
       <List
         sx={{
           position: "relative",
-          paddingLeft: 4,
+          paddingLeft: 0,
           "&::before": {
             content: '""',
             position: "absolute",
@@ -107,17 +119,17 @@ function ExperienceItem({ experience }) {
     <ListItem
       sx={{ display: "flex", alignItems: "flex-start", mb: 4, marginBottom: "48px" }}
     >
-      {/* Icono de punto */}
+      {/* Dot Icon */}
       <FiberManualRecordIcon
         sx={{
           color: "#ffa500",
           fontSize: "16px",
-          marginRight: 2,
+          marginRight: 4,
           marginTop: "4px",
         }}
       />
       <Box>
-        {/* Título de la posición */}
+        {/* Tittle */}
         <Typography
           variant="h6"
           sx={{ color: "#ffc107", fontWeight: "bold" }}
@@ -125,7 +137,7 @@ function ExperienceItem({ experience }) {
           {experience.title}
         </Typography>
 
-        {/* Empresa y fecha */}
+        {/* Company & date */}
         <Typography
           variant="subtitle1"
           sx={{
@@ -143,7 +155,7 @@ function ExperienceItem({ experience }) {
           {experience.date}
         </Typography>
 
-        {/* Descripción con control de expansión */}
+        {/* Description  */}
         <Box
           sx={{
             mt: 1,
@@ -192,7 +204,7 @@ function ExperienceItem({ experience }) {
             },
           }}
         >
-          {isExpanded ? "Mostrar menos" : "Saber más"} &gt;
+          {isExpanded ? "Show less" : "More"} &gt;
         </Typography>
       </Box>
     </ListItem>
