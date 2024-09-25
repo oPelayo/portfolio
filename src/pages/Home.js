@@ -1,5 +1,5 @@
 import React from 'react';
-import { Typography, Box, Button, IconButton } from '@mui/material';
+import { Typography, Box, Button } from '@mui/material';
 import { useTheme } from "@mui/material/styles";
 import ContactPage from '@mui/icons-material/ContactPage'; 
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
