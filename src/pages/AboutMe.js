@@ -36,7 +36,7 @@ const AboutMe = () => {
           marginBottom: 2,
         }}
       >
-        These experiences were very enriching and the process of developing our own website sparked my interest in code. Always focused on hardware, I began to delve into software from then on. At the moment, I am focusing what I have learned towards this area, exploring different aspects of computing in order to grow professionally.
+        These enriching experiences sparked my interest in coding. Although I initially focused on hardware, I began exploring software development and am now channeling my learning into this field. I continue to explore various aspects of computing to grow professionally.
       </Typography>
 
       <Typography
@@ -47,7 +47,7 @@ const AboutMe = () => {
           marginBottom: 2,
         }}
       >
-        In addition to my formal training in Java, Spring, Maven, Node, HTML5, CSS3, JS, Git, React, Angular and Docker, I am constantly looking to stay up to date with complementary technologies such as Python, Docker, Kotlin, TypeScript or cybersecurity. This approach allows me to face any challenge with greater ease and versatility.
+       In addition to my formal training in Java, Spring, Maven, Node, HTML5, CSS3, JS, Git, React, Angular, and Docker, I am always looking to expand my knowledge with technologies like Python, Kotlin, TypeScript, and cybersecurity. This mindset helps me face challenges with flexibility and versatility.
       </Typography>
 
       <Typography
@@ -57,7 +57,7 @@ const AboutMe = () => {
           lineHeight: 1.6,
         }}
       >
-        I am excited about the new goal I have set for myself and I enjoy learning something new every day. I am always open to opportunities and collaborations that allow me to continue growing professionally.
+        I am excited about the goals I’ve set for myself and enjoy learning something new every day. I am open to opportunities and collaborations that allow me to keep growing professionally.
       </Typography>
     </Box>
   );
