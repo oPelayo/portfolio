@@ -26,7 +26,7 @@ function Home() {
         I am a full-stack developer with a strong foundation in Java, Spring, Node.js, Angular, and React.
         My experience co-founding an association has provided me with strong skills in project management,
         teamwork, and problem-solving, which I now apply to build innovative web solutions. My passion for 
-        technology drives me to always stay up to date with the latest trends, such as Docker, Kotlin, and Python.
+        technology drives me to always stay up to date with the latest trends, such as Docker, Kotlin, Python. or cybersecurity.
       </Typography>
 
       {/* Skills list */}

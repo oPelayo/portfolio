@@ -15,7 +15,7 @@ function Proyects() {
       description: 'Final degree project rated as excellent. Developed a solution to help doctors identify specific migraine triggers in patients by analyzing lifestyle habits and frequency patterns.',
       image: MigralogImage,
       tags: ['Spring', 'Angular', 'MySQL', 'Docker' ],
-      codeLink: "https://github.com/oPelayo/the_way",
+      codeLink: "https://github.com/oPelayo/Migralog",
       previewLink: '#',
     },
     {
