@@ -16,7 +16,7 @@ function Proyects() {
       image: MigralogImage,
       tags: ['Spring', 'Angular', 'MySQL', 'Docker' ],
       codeLink: "https://github.com/oPelayo/Migralog",
-      previewLink: '#',
+      previewLink: "https://opelayo.github.io/Migralog/index",
     },
     {
       title: 'Nexuscom',
@@ -24,7 +24,7 @@ function Proyects() {
       image: NexuscomImage,
       tags: ['Native Java', 'HTML','CSS', 'JS', 'MySQL', 'Apache'],
       codeLink: "https://github.com/oPelayo/the_Way_two", 
-      previewLink: "https://opelayo.github.io/Migralog/index",
+      previewLink: '#',
     }
   ];
 
