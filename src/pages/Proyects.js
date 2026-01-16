@@ -24,7 +24,7 @@ function Proyects() {
       image: NexuscomImage,
       tags: ['Native Java', 'HTML','CSS', 'JS', 'MySQL', 'Apache'],
       codeLink: "https://github.com/oPelayo/the_Way_two", 
-      previewLink: '#',
+      previewLink: "https://opelayo.github.io/Migralog/index",
     }
   ];
 
@@ -107,7 +107,7 @@ function Proyects() {
               >
                 Code
               </Button>
-              {/*Preview button
+              {/*Preview button*/}
               <Button
                 variant="outlined"
                 sx={{
@@ -119,7 +119,7 @@ function Proyects() {
                 href={project.previewLink}
               >
                 Preview
-              </Button>*/}
+              </Button>
             </Box>
           </Box>
         </Box>
