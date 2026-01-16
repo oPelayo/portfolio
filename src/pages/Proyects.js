@@ -2,7 +2,7 @@ import React from "react";
 import { Typography, Box, Button, Chip } from '@mui/material';
 import { useTheme } from "@mui/material/styles";
 import CodeIcon from '@mui/icons-material/Code';
-/*import VisibilityIcon from '@mui/icons-material/Visibility';*/
+import VisibilityIcon from '@mui/icons-material/Visibility';
 import WebIcon from '@mui/icons-material/Web';
 import MigralogImage from './../imgs/Migralog.png';
 import NexuscomImage from './../imgs/Nexuscom.png';
